@@ -33,19 +33,20 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testFindUserByEmail() {
-        String email = "testuser@example.com";
+public void testFindUserByEmail() {
+    String email = "testuser" + System.currentTimeMillis() + "@example.com";
 
-        User user = new User();
-        user.setEmail(email);
-        user.setPassword("test123");
-        user.setFirstName("Test");
-        user.setLastName("User");
+    User user = new User();
+    user.setEmail(email);
+    user.setPassword("test123");
+    user.setFirstName("Test");
+    user.setLastName("User");
 
-        repo.save(user);
+    repo.save(user);
 
-        User foundUser = repo.findByEmail(email);
-        assertThat(foundUser).isNotNull();
-        assertThat(foundUser.getEmail()).isEqualTo(email);
-    }
+    User foundUser = repo.findByEmail(email);
+    assertThat(foundUser).isNotNull();
+    assertThat(foundUser.getEmail()).isEqualTo(email);
+}
+
 }

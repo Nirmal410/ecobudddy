@@ -1,1 +1,1 @@
-# ecobudddy
+# ecobuddy
